@@ -23,7 +23,7 @@ const createUser = asyncHandler(async (req, res) => {
     await newUser.save();
     createToken(res, newUser._id);
 
-    res.status(201).json({
+   return res.status(201).json({
       _id: newUser._id,
       username: newUser.username,
       email: newUser.email,
